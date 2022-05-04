@@ -9,5 +9,10 @@ function connect_db()
         $connexion=new PDO($dsn,USER,PASS);
         //echp "on est connecté;
     }
+    catch(PDOException $e)
+    {
+        echo("Echec Connexion : %s\n".$e->getMessage());
+        exit();
+    }
 }
 ?>
